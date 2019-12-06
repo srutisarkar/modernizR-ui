@@ -1,0 +1,41 @@
+/* import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AnalyzeQueryComponent } from './analyze-query.component';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavigationComponent } from '../navigation/navigation.component';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import {
+  MatMenuModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatCardModule, MatInputModule, MatButtonModule,
+  MatListModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule,
+  MatCheckboxModule, MatSlideToggleModule, 
+    MatRippleModule
+} from '@angular/material';
+import {MatStepperModule} from '@angular/material/stepper';
+
+describe('AnalyzeQueryComponent', () => {
+  let component: AnalyzeQueryComponent;
+  let fixture: ComponentFixture<AnalyzeQueryComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [MatStepperModule, ReactiveFormsModule ],
+      declarations: [ AnalyzeQueryComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AnalyzeQueryComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+}); */

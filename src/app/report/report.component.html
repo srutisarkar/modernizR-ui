@@ -1,0 +1,27 @@
+	<form [formGroup]="stepReport">
+		<h1>
+			Gauge Chart
+		</h1>
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4" >
+				<fusioncharts width="350" height="150" type="AngularGauge" [dataSource]="dataSource">
+				</fusioncharts>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4" >
+				<fusioncharts width="350" height="150" type="AngularGauge" [dataSource]="dataSource_01">
+				</fusioncharts>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4" >
+				<fusioncharts width="350" height="150" type="AngularGauge" [dataSource]="dataSource_02">
+				</fusioncharts>
+			</div>
+		</div>
+		<div class="col-sm-offset-4 col-xs-6 col-sm-6 col-md-6" >
+				<fusioncharts width="420" height="220" type="AngularGauge" [dataSource]="dataSource_04">
+				</fusioncharts>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6" >
+				<button mat-button (click)="reset()" class="mat-raised-button mat-primary nav-btn">Generate the full Report</button> 
+
+			</div>
+	</form>

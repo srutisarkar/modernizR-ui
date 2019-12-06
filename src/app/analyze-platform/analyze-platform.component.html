@@ -1,0 +1,28 @@
+<p>
+	Proprietary Analysis will be done using Transformation advisor
+</p>
+<div class="col-xs-7 col-sm-7 col-md-7">
+	<form class="cprojet-form">
+		<mat-form-field class="project-full-width">
+			<input matInput placeholder="Project Name" name="taplatform" value="{{taPlatformObj.projectName}}" [(ngModel)] = "taPlatformObj.projectName">
+		</mat-form-field>
+	</form>
+	<button mat-raised-button class="mat-raised-button mat-primary nav-btn " (click) = "ibmTAfetchData()">SET UP</button><p></p>
+
+</div>
+<div class="well col-xs-7 col-sm-7 col-md-7"  *ngIf="setupdatashow">
+	<div class="panel-body">
+		<form role="form" [formGroup]="stepAnalyze_Platform">
+			<p class="col-xs-12 col-sm-12 col-md-12">Setup is done successfully</p>
+			<p class="col-xs-12 col-sm-12 col-md-12">Workspace Name : {{taPlatformdataDetails.analyzer.projectName}}</p>
+			<p class="col-xs-12 col-sm-12 col-md-12">Collection Name : {{taPlatformdataDetails.custom.collectionName}}</p>
+			<p class="col-xs-12 col-sm-12 col-md-12">You can access the portal by clicking <a href="{{taPlatformdataDetails.analyzer.dataCollectorURL}}" target="_blank">here </a></p>
+		</form>
+	</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6">
+<button mat-button matStepperPrevious class="mat-raised-button mat-primary nav-btn">Back</button>
+
+<button mat-raised-button matStepperNext class="mat-raised-button mat-primary nav-btn" style="margin-left: 0.5rem;">Next</button>
+
+</div>

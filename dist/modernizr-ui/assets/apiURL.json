@@ -1,0 +1,7 @@
+{
+    "apiBaseURL": "http://localhost:5982/projects",
+    "apiQueryURL": " http://localhost:5982/questions/_design/qadoc/_view/qaview",
+    "apiTAPlatform": "http://localhost:8086/ibmta-analyzer/setup",
+    "apisonar": "http://localhost:8090/generateToken"
+    
+}

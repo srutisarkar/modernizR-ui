@@ -1,0 +1,74 @@
+<mat-card>
+  <form [formGroup]="StepCreate_Code" (ngSubmit)="onSubmit()">
+    <p>Setting up basic configuration</p>
+    <mat-form-field style="width: 26vw;">
+      <input matInput formControlName="projectName" placeholder="Project Name" required id="Project_Name">
+    </mat-form-field>
+
+    <p></p>
+    <mat-form-field style="width: 26vw;">
+      <input matInput formControlName="portfolio" placeholder="Portfolio" required>
+    </mat-form-field>
+
+    <p></p>
+    <mat-form-field style="width: 26vw;">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Leave a comment" style="height: 10rem;"></textarea>
+    </mat-form-field>
+
+    <!-- Chip -->
+    <p></p>
+    <div class="row">
+      <div class="col-xs-9 col-sm-9 col-md-9">
+        <label>Source Platform</label>
+        <p></p>
+        <mat-form-field class="example-chip-list" style="width: 26vw">
+          <mat-chip-list #chipList aria-label="Chips selection">
+            <input formControlName="sourcechip" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-9 col-sm-9 col-md-9">
+        <mat-chip *ngFor="let chip of chips" [selectable]="selectable" [removable]="removable" (removed)="remove(chip)">
+          {{chip.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+      </div>
+    </div> <p></p> <p></p>
+
+    <div class="row">
+      <div class="col-xs-9 col-sm-9 col-md-9">
+        <label>Target Platform</label>
+        <p></p>
+        <mat-form-field class="example-chip-list" style="width: 26vw">
+          <mat-chip-list #chipList aria-label="Chips selection">
+            <input formControlName="targetchip" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="addTarget($event)">
+          </mat-chip-list>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-9 col-sm-9 col-md-9">
+        <mat-chip *ngFor="let chipTarget of chipsTarget" [selectable]="selectable" [removable]="removable" (removed)="removeTarget(chipTarget)">
+          {{chipTarget.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+      </div>
+    </div>
+
+    <p></p>
+    <div class="example-button-row">
+     <!-- <button mat-raised-button color="accent">Create</button> -->
+      <button type="submit" id="nextBtn" [disabled]="!StepCreate_Code.valid" class="mat-raised-button mat-primary nav-btn" style="margin-left: .6rem;"
+        (click)="storedata()"  *ngIf="showNextBtn">Save</button>
+
+     <button (click)="updateProfile()"  matStepperNext  *ngIf="showUpdateBtn" id="updateBtn" class="mat-raised-button mat-primary nav-btn" style="margin-left: .6rem;">Next</button>
+    </div>
+  </form>
+</mat-card>

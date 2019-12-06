@@ -1,0 +1,22 @@
+<mat-horizontal-stepper linear #stepper>
+	<mat-step [stepControl]="StepCreate_Code">
+		<ng-template matStepLabel>Basic Set up</ng-template>
+		<app-setup-project></app-setup-project>
+	</mat-step>
+	<mat-step [stepControl]="StepAnalyze_Code">
+		<ng-template matStepLabel>Technical debt Analysis</ng-template>
+		<app-analyze-code></app-analyze-code>
+	</mat-step>
+	<mat-step [stepControl]="stepAnalyze_Platform">
+		<ng-template matStepLabel>Proprietary code Analysis</ng-template>
+		<app-analyze-platform></app-analyze-platform>
+	</mat-step>
+	<mat-step [stepControl]="stepQuery">
+		<ng-template matStepLabel>Additional Questions</ng-template>
+		<app-analyze-query></app-analyze-query>
+	</mat-step>
+	<mat-step [stepControl]="stepReport">
+		<ng-template matStepLabel>Report</ng-template>
+		<app-report></app-report>
+	</mat-step>
+</mat-horizontal-stepper>
